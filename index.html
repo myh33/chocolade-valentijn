@@ -5,31 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valentijn Chocolade</title>
     <style>
+        /* Modern lettertype en achtergrond met verloop */
         body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            font-family: 'Apple SD Gothic Neo', 'Segoe UI', Roboto, sans-serif; 
             text-align: center; 
-            background-color: #fff0f3; 
-            color: #4a0e0e;
-            padding: 50px;
+            background: linear-gradient(135deg, #fff0f3 0%, #ffccd5 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
         }
+
         .kaart {
             background: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            display: inline-block;
-            max-width: 500px;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            max-width: 450px;
+            transition: transform 0.3s ease; /* Zorgt voor de beweging */
         }
+
+        /* De kaart komt een klein beetje omhoog als je erover zweeft */
+        .kaart:hover {
+            transform: translateY(-10px);
+        }
+
         img { 
             max-width: 100%; 
             height: auto; 
-            border-radius: 15px; 
-            margin: 20px 0;
-            border: 5px solid #ffb3c1;
+            border-radius: 20px; 
+            margin: 25px 0;
+            transition: transform 0.5s ease;
         }
-        h1 { color: #c9184a; }
-        p { font-size: 1.2rem; line-height: 1.6; }
-        .smelt-tekst { font-style: italic; color: #ff4d6d; }
+
+        /* De foto zoomt zachtjes in bij hover */
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        h1 { 
+            color: #c9184a; 
+            font-size: 2rem;
+            letter-spacing: -1px;
+        }
+
+        p { 
+            font-size: 1.1rem; 
+            line-height: 1.6; 
+            color: #594d4d;
+        }
+
+        .smelt-tekst { 
+            font-style: italic; 
+            color: #ff4d6d;
+            font-weight: 500;
+        }
     </style>
 </head>
 <body>

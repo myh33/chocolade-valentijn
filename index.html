@@ -2,47 +2,69 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valentijn Voor Jou</title>
     <style>
-        /* Dit zorgt ervoor dat de kaart in het midden staat */
         body { 
             margin: 0; 
             height: 100vh; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
-            background: #fff5f6; /* Zacht roze achtergrond */
-            font-family: sans-serif;
+            background: linear-gradient(135deg, #fff5f6 0%, #ffccd5 100%);
+            font-family: 'Helvetica Neue', Arial, sans-serif;
         }
 
-        /* Dit is de witte kaart */
-        .kaart {
+        /* DIT IS DE BELANGRIJKSTE VERANDERING: DE WITTE KAART */
+        .wenskaart {
             background: white;
-            padding: 30px;
-            border-radius: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 40px;
+            border-radius: 40px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
             text-align: center;
-            max-width: 350px;
+            max-width: 380px;
+            width: 85%;
+            transition: transform 0.4s ease;
         }
 
-        /* Dit maakt de foto mooi */
+        .wenskaart:hover {
+            transform: translateY(-10px); /* Kaart komt omhoog bij hover */
+        }
+
         img { 
             width: 100%; 
-            border-radius: 15px; /* Ronde hoeken bij de foto! */
-            margin-top: 15px;
+            border-radius: 20px; 
+            margin: 25px 0;
+            display: block;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
-        h1 { color: #c9184a; font-size: 24px; }
-        p { color: #555; line-height: 1.5; }
+        h1 { color: #c9184a; margin: 0; font-size: 26px; font-weight: 300; letter-spacing: 1px; }
+        p { color: #555; font-size: 17px; line-height: 1.6; }
+        
+        .smelt { 
+            color: #ff4d6d; 
+            font-style: italic; 
+            font-weight: bold;
+            display: block;
+            margin-top: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="kaart">
-        <h1>Speciaal voor jou</h1>
-        <p>Niets is zo zoet als jij.</p>
+    <div class="wenskaart">
+        <h1>Voor mijn Valentijn</h1>
         <img src="chocolade-hart.jpg" alt="Chocolade Hart">
-        <p style="font-style: italic; color: #ff4d6d;">Het begint te smelten...</p>
+        <p>Niets is zo zoet als jij.</p>
+        <span class="smelt">Het begint te smelten...</span>
     </div>
 
 </body>

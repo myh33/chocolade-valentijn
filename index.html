@@ -2,38 +2,48 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <title>Valentijn Special</title>
+    <title>Valentijn Voor Jou</title>
     <style>
+        /* Dit zorgt ervoor dat de kaart in het midden staat */
         body { 
-            background: #ffafbd; 
-            background: linear-gradient(to right, #ffc3a0, #ffafbd);
-            height: 100vh; display: flex; align-items: center; justify-content: center; margin: 0; font-family: serif;
+            margin: 0; 
+            height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            background: #fff5f6; /* Zacht roze achtergrond */
+            font-family: sans-serif;
         }
+
+        /* Dit is de witte kaart */
         .kaart {
-            background: white; padding: 40px; border-radius: 30px; text-align: center;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.2); max-width: 400px;
-            transition: 0.5s;
+            background: white;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 350px;
         }
-        .kaart:hover { transform: scale(1.05); }
-        img { width: 100%; border-radius: 15px; margin: 20px 0; display: block; }
-        h1 { color: #d63384; font-size: 2.5rem; }
-        .smelt-animatie { 
-            display: block; color: #ff4d6d; font-weight: bold; font-style: italic;
-            animation: hartslag 1.5s infinite; 
+
+        /* Dit maakt de foto mooi */
+        img { 
+            width: 100%; 
+            border-radius: 15px; /* Ronde hoeken bij de foto! */
+            margin-top: 15px;
         }
-        @keyframes hartslag {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); color: #c9184a; }
-            100% { transform: scale(1); }
-        }
+
+        h1 { color: #c9184a; font-size: 24px; }
+        p { color: #555; line-height: 1.5; }
     </style>
 </head>
 <body>
+
     <div class="kaart">
-        <h1>Voor jou</h1>
-        <img src="chocolade-hart.jpg">
-        <p>Jij bent de allerzoetste.</p>
-        <span class="smelt-animatie">Het begint te smelten...</span>
+        <h1>Speciaal voor jou</h1>
+        <p>Niets is zo zoet als jij.</p>
+        <img src="chocolade-hart.jpg" alt="Chocolade Hart">
+        <p style="font-style: italic; color: #ff4d6d;">Het begint te smelten...</p>
     </div>
+
 </body>
 </html>

@@ -3,68 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentijn Voor Jou</title>
+    <title>Luxe Valentijn Chocolade</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
     <style>
         body { 
             margin: 0; 
-            height: 100vh; 
+            min-height: 100vh; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
-            background: linear-gradient(135deg, #fff5f6 0%, #ffccd5 100%);
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            /* De warme achtergrond: Oranje-achtig roze links naar dieproze rechts */
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            font-family: 'Playfair Display', serif;
+            padding: 20px;
         }
 
-        /* DIT IS DE BELANGRIJKSTE VERANDERING: DE WITTE KAART */
         .wenskaart {
-            background: white;
+            background: white; /* De witte box achter de foto */
             padding: 40px;
-            border-radius: 40px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            border-radius: 35px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
             text-align: center;
-            max-width: 380px;
-            width: 85%;
-            transition: transform 0.4s ease;
+            max-width: 420px;
+            width: 100%;
         }
 
-        .wenskaart:hover {
-            transform: translateY(-10px); /* Kaart komt omhoog bij hover */
+        h1 { 
+            color: #c9184a; 
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .prijs { 
+            font-size: 28px; 
+            color: #333; 
+            margin-bottom: 15px;
+            display: block;
         }
 
         img { 
             width: 100%; 
             border-radius: 20px; 
-            margin: 25px 0;
+            margin-bottom: 25px;
             display: block;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
-        h1 { color: #c9184a; margin: 0; font-size: 26px; font-weight: 300; letter-spacing: 1px; }
-        p { color: #555; font-size: 17px; line-height: 1.6; }
-        
-        .smelt { 
-            color: #ff4d6d; 
-            font-style: italic; 
+        .beschrijving { 
+            color: #5d4037; 
+            font-size: 1.1rem; 
+            line-height: 1.6; 
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .bestel-knop {
+            background: #c9184a;
+            color: white;
+            padding: 18px 30px;
+            border-radius: 12px;
+            text-decoration: none;
             font-weight: bold;
+            font-size: 1.1rem;
             display: block;
-            margin-top: 20px;
-            animation: pulse 2s infinite;
+            transition: all 0.3s ease;
         }
 
-        @keyframes pulse {
-            0% { opacity: 0.6; }
-            50% { opacity: 1; }
-            100% { opacity: 0.6; }
+        .bestel-knop:hover {
+            background: #a4133c;
+            transform: translateY(-3px);
         }
     </style>
 </head>
 <body>
 
     <div class="wenskaart">
-        <h1>Voor mijn Valentijn</h1>
+        <h1>Luxe Chocolade</h1>
+        <span class="prijs">€ 14,95</span>
+
         <img src="chocolade-hart.jpg" alt="Chocolade Hart">
-        <p>Niets is zo zoet als jij.</p>
-        <span class="smelt">Het begint te smelten...</span>
+
+        <div class="beschrijving">
+            "Handgemaakt van de fijnste Belgische chocolade. Een geschenk dat echt uit het hart komt."
+        </div>
+
+        <a href="https://www.paypal.me/jouwgebruikersnaam" target="_blank" class="bestel-knop">
+            Bestel via PayPal
+        </a>
     </div>
 
 </body>

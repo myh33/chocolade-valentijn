@@ -3,201 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxe Chocolade Valentijn - Atelier Editie</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <title>Luxe Valentijn Chocolade</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --gold: #c5a059;
-            --dark-choco: #2d1b14;
-            --soft-white: #f9f9f9;
-        }
-
-        body {
-            background-color: #1a0f0a;
-            color: var(--dark-choco);
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
+        body { 
+            margin: 0; 
+            min-height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            /* De warme achtergrond: Oranje-achtig roze links naar dieproze rechts */
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            font-family: 'Playfair Display', serif;
             padding: 20px;
-            display: flex;
-            justify-content: center;
         }
 
-        .container {
-            background-color: var(--soft-white);
-            max-width: 900px;
-            width: 100%;
+        .wenskaart {
+            background: white; /* De witte box achter de foto */
             padding: 40px;
-            border-radius: 2px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-radius: 35px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
             text-align: center;
-            border: 1px solid var(--gold);
-        }
-
-        h1 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 3.5rem;
-            color: var(--dark-choco);
-            margin-bottom: 10px;
-        }
-
-        .quote {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: #555;
-        }
-
-        /* Foto sectie - Groter gemaakt */
-        .hero-image {
+            max-width: 420px;
             width: 100%;
-            max-height: 500px;
-            object-fit: cover;
-            border: 1px solid var(--gold);
+        }
+
+        h1 { 
+            color: #c9184a; 
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .prijs { 
+            font-size: 28px; 
+            color: #333; 
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        img { 
+            width: 100%; 
+            border-radius: 20px; 
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .beschrijving { 
+            color: #5d4037; 
+            font-size: 1.1rem; 
+            line-height: 1.6; 
             margin-bottom: 30px;
+            font-style: italic;
         }
 
-        /* Prijs tabel/grid */
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin: 40px 0;
-        }
-
-        .price-card {
-            padding: 20px;
-            border: 1px solid #ddd;
-            background: white;
-            transition: transform 0.3s;
-        }
-
-        .price-card.featured {
-            border: 2px solid var(--gold);
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .price-card h3 {
-            font-family: 'Playfair Display', serif;
-            margin-top: 0;
-        }
-
-        .price {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--gold);
-        }
-
-        /* Info tekst */
-        .details-section {
-            text-align: left;
-            line-height: 1.8;
-            margin: 40px 0;
-            padding: 20px;
-            background: #fff;
-            border-left: 4px solid var(--gold);
-        }
-
-        .urgent-badge {
-            display: inline-block;
-            background: #900;
+        .bestel-knop {
+            background: #c9184a;
             color: white;
-            padding: 5px 15px;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-        }
-
-        .cta-button {
-            background-color: var(--dark-choco);
-            color: white;
-            padding: 15px 40px;
+            padding: 18px 30px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: bold;
-            display: inline-block;
-            margin-top: 20px;
-            border-radius: 0;
-            transition: background 0.3s;
+            font-size: 1.1rem;
+            display: block;
+            transition: all 0.3s ease;
         }
 
-        .cta-button:hover {
-            background-color: var(--gold);
-        }
-
-        .secondary-contact {
-            margin-top: 20px;
-            font-size: 0.9rem;
-        }
-
-        .video-placeholder {
-            background: #eee;
-            padding: 40px;
-            margin-top: 30px;
-            border: 1px dashed var(--gold);
-        }
-
-        @media (max-width: 600px) {
-            .pricing-grid { grid-template-columns: 1fr; }
-            h1 { font-size: 2.5rem; }
+        .bestel-knop:hover {
+            background: #a4133c;
+            transform: translateY(-3px);
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="urgent-badge">LIMITED VALENTINE EDITION - ATELIER START-UP</div>
-    
-    <h1>Luxe chocolade voor je Valentijn</h1>
-    <p class="quote">"Handgemaakt door jou of door mij. Ambachtelijke chocolade, een geschenk dat echt uit het hart komt."</p>
+    <div class="wenskaart">
+        <h1>Luxe Chocolade</h1>
+        <span class="prijs">€ 14,95</span>
 
-    <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Luxe Chocolade Hart" class="hero-image">
+        <img src="chocolade-hart.jpg" alt="Chocolade Hart">
 
-    <div class="pricing-grid">
-        <div class="price-card">
-            <h3>De Massieve Meester</h3>
-            <p>Lagen van zeezout, koek en hazelnootmousse.</p>
-            <div class="price">€ 55,99</div>
+        <div class="beschrijving">
+            "Handgemaakt van de fijnste Belgische chocolade. Een geschenk dat echt uit het hart komt."
         </div>
-        <div class="price-card featured">
-            <h3>De Gevulde Ballon</h3>
-            <p>Hol hart gevuld met Celebrations, Merci of eigen sieraad.</p>
-            <div class="price">€ 59,99</div>
-            <small><i>Meest gekozen - Alleen ophalen</i></small>
-        </div>
-        <div class="price-card">
-            <h3>Het DIY Pakket</h3>
-            <p>Maak het helemaal zelf met onze complete kit.</p>
-            <div class="price">€ 49,99</div>
-        </div>
-    </div>
 
-    <div class="details-section">
-        <h3>Over onze creaties</h3>
-        <p>Onze harten zijn niet zomaar chocola; ze zijn een ervaring. We gebruiken een <strong>eigen blend</strong> van de fijnste chocolade met een vleugje zeezout. De witte buitenkant dient als een canvas: met de meegeleverde cacaoboter-verf schilder je jouw eigen boodschap.</p>
-        
-        <p><strong>De Geheime Kamer:</strong> Elk hol hart heeft een subtiele opening aan de onderzijde. Hierdoor kun je het hart zelf vullen met een sieraad of een persoonlijke brief. Dankzij de gratis meegeleverde <strong>Atelier Display Ring</strong> staat het hart prachtig rechtop op elke kast, terwijl de opening onzichtbaar blijft.</p>
-        
-        <p><strong>Het DIY Pakket bevat:</strong><br>
-        * Eigen smaak-chocolade nibs (Wit & Melk)<br>
-        * Gietmallen voor het hart<br>
-        * Professioneel gereedschap voor afwerking<br>
-        * Cacaoboter-verf (Rood & Zwart) + spuitzakjes<br>
-        * Luxe verpakking met cellofaan en strik</p>
+        <a href="https://www.paypal.me/jouwgebruikersnaam" target="_blank" class="bestel-knop">
+            Bestel via PayPal
+        </a>
     </div>
-
-    <div class="video-placeholder">
-        <p><strong>Bekijk hoe de magie ontstaat</strong></p>
-        <small>(Video: Zo giet en schilder je jouw hart)</small>
-    </div>
-
-    <a href="#" class="cta-button">BESTEL VIA PAYPAL</a>
-
-    <div class="secondary-contact">
-        <p>Liever betalen via Tikkie of afspraak maken voor ophalen?<br>
-        <strong>Stuur ons een bericht via WhatsApp: [Jouw Nummer]</strong></p>
-    </div>
-</div>
 
 </body>
 </html>

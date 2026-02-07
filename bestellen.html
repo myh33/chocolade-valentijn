@@ -5,44 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bestellen - CocoaCraft</title>
     <style>
-        body { font-family: sans-serif; max-width: 600px; margin: 40px auto; padding: 20px; }
-        label { display: block; margin-top: 10px; font-weight: bold; }
-        input { width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
-        .bestel-knop { background-color: #0070ba; color: white; padding: 15px; text-decoration: none; border-radius: 5px; display: none; margin-top: 20px; text-align: center; width: 100%; font-weight: bold; }
+        body { font-family: sans-serif; max-width: 600px; margin: 40px auto; padding: 20px; line-height: 1.6; background-color: #fff5f5; }
+        label { display: block; margin-top: 10px; font-weight: bold; color: #5d4037; }
+        input { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #d7ccc8; border-radius: 8px; box-sizing: border-box; }
+        .bestel-knop { background-color: #5d4037; color: white; padding: 15px; text-decoration: none; border-radius: 8px; display: none; margin-top: 20px; text-align: center; width: 100%; font-weight: bold; font-size: 1.1em; }
+        .bestel-knop:hover { background-color: #3e2723; }
+        hr { border: 0; border-top: 1px solid #d7ccc8; margin: 30px 0; }
+        h1, h3 { color: #5d4037; }
     </style>
 </head>
 <body>
 
-    <h1>Bijna klaar!</h1>
-    <p>Vul je gegevens in voor de verzending van je pakket.</p>
+    <h1>Verzendgegevens</h1>
+    <p>Vul je gegevens in zodat we je pakketje kunnen opsturen.</p>
 
     <form id="verzend-formulier">
         <label for="naam">Naam:</label>
-        <input type="text" id="naam" name="naam" required>
+        <input type="text" id="naam" name="naam" placeholder="Voor- en achternaam" required>
+
         <label for="adres">Adres:</label>
-        <input type="text" id="adres" name="adres" required>
+        <input type="text" id="adres" name="adres" placeholder="Straat en huisnummer" required>
+
         <label for="postcode">Postcode:</label>
-        <input type="text" id="postcode" name="postcode" required>
+        <input type="text" id="postcode" name="postcode" placeholder="1234 AB" required>
+
         <label for="stad">Stad:</label>
-        <input type="text" id="stad" name="stad" required>
+        <input type="text" id="stad" name="stad" placeholder="Woonplaats" required>
+
         <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" placeholder="je@email.nl" required>
     </form>
 
     <hr>
+
     <h3>Totaalbedrag (incl. €12,55 verzekerde verzending):</h3>
-    
+
     <a id="knop-persoonlijk" href="https://www.paypal.me/cocoacraftco/52,54" target="_blank" class="bestel-knop">
-        Nu kopen Persoonlijk Pakket (DIY) (€52,54)
+        Nu betalen via PayPal (€52,54)
     </a>
 
     <a id="knop-standaard" href="https://www.paypal.me/cocoacraftco/62,54" target="_blank" class="bestel-knop">
-        Nu kopen Standaard Pakket (€62,54)
+        Nu betalen via PayPal (€62,54)
     </a>
 
-    <p style="margin-top: 20px;"><a href="index.html">← Terug naar de winkel</a></p>
+    <p style="margin-top: 30px; text-align: center;">
+        <a href="index.html" style="color: #5d4037;">← Terug naar de winkel</a>
+    </p>
 
     <script>
+        // Dit script zorgt dat de klant de juiste prijs ziet op basis van hun klik op de vorige pagina
         const urlParams = new URLSearchParams(window.location.search);
         const pakket = urlParams.get('pakket');
 
@@ -51,7 +62,7 @@
         } else if (pakket === 'standaard') {
             document.getElementById('knop-standaard').style.display = 'block';
         } else {
-            // Standaard laten we de goedkoopste zien als er geen keuze is gemaakt
+            // Als er geen keuze bekend is, tonen we voor de zekerheid de eerste optie
             document.getElementById('knop-persoonlijk').style.display = 'block';
         }
     </script>

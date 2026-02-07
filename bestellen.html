@@ -43,7 +43,6 @@
     <p style="margin-top: 20px;"><a href="index.html">← Terug naar de winkel</a></p>
 
     <script>
-        // Dit stukje kijkt naar de link (bijv. ?pakket=persoonlijk) en laat de juiste knop zien
         const urlParams = new URLSearchParams(window.location.search);
         const pakket = urlParams.get('pakket');
 
@@ -52,7 +51,7 @@
         } else if (pakket === 'standaard') {
             document.getElementById('knop-standaard').style.display = 'block';
         } else {
-            // Als er iets misgaat, laten we voor de zekerheid de goedkoopste zien
+            // Standaard laten we de goedkoopste zien als er geen keuze is gemaakt
             document.getElementById('knop-persoonlijk').style.display = 'block';
         }
     </script>

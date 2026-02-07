@@ -45,26 +45,9 @@
     </p>
 
 <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const pakket = urlParams.get('pakket');
-
-    // We zorgen dat er standaard niets getoond wordt voordat we kiezen
-    document.getElementById('knop-pakket1').style.display = 'none';
-    document.getElementById('knop-pakket2').style.display = 'none';
-
-    if (pakket === 'standaard') {
-        // Keuze van €39,99 op index -> toon knop €52,54
-        document.getElementById('knop-pakket1').style.display = 'block';
-    } 
-    else if (pakket === 'persoonlijk') {
-        // Keuze van €49,99 op index -> toon knop €62,54
-        document.getElementById('knop-pakket2').style.display = 'block';
-    } 
-    else {
-        // Vangnet: als de link niet herkend wordt, toon de goedkoopste knop (€52,54)
-        // Zo blijft je pagina nooit leeg zoals nu!
-        document.getElementById('knop-pakket1').style.display = 'block';
-    }
+    const p = new URLSearchParams(window.location.search).get('pakket');
+    document.getElementById('knop-pakket1').style.display = (p === 'standaard') ? 'block' : 'none';
+    document.getElementById('knop-pakket2').style.display = (p === 'persoonlijk') ? 'block' : 'none';
 </script>
 </body>
 </html>

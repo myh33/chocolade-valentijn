@@ -44,46 +44,10 @@
         <a href="index.html" style="color: #5d4037;">← Terug naar de winkel</a>
     </p>
 
-47  <script>
-48      const p = new URLSearchParams(window.location.search).get('pakket');
-49      
-50      // Alles eerst verbergen
-51      document.getElementById('knop-pakket1').style.display = 'none';
-52      document.getElementById('knop-pakket2').style.display = 'none';
-53  
-54      if (p === 'standaard') {
-55          // Toon knop €52,54
-56          document.getElementById('knop-pakket1').style.display = 'block';
-57      } 
-58      else if (p === 'persoonlijk') {
-59          // Toon knop €62,54
-60          document.getElementById('knop-pakket2').style.display = 'block';
-61      } 
-62      else {
-63          // Vangnet: toon €52,54 als er geen keuze is
-64          document.getElementById('knop-pakket1').style.display = 'block';
-65      }
-66  </script>
-67  </body>
-68  </html>47  <script>
-48      const p = new URLSearchParams(window.location.search).get('pakket');
-49      
-50      // Alles eerst verbergen
-51      document.getElementById('knop-pakket1').style.display = 'none';
-52      document.getElementById('knop-pakket2').style.display = 'none';
-53  
-54      if (p === 'standaard') {
-55          // Toon knop €52,54
-56          document.getElementById('knop-pakket1').style.display = 'block';
-57      } 
-58      else if (p === 'persoonlijk') {
-59          // Toon knop €62,54
-60          document.getElementById('knop-pakket2').style.display = 'block';
-61      } 
-62      else {
-63          // Vangnet: toon €52,54 als er geen keuze is
-64          document.getElementById('knop-pakket1').style.display = 'block';
-65      }
-66  </script>
-67  </body>
-68  </html>
+<script>
+    const p = new URLSearchParams(window.location.search).get('pakket');
+    document.getElementById('knop-pakket1').style.display = (p === 'persoonlijk') ? 'none' : 'block';
+    document.getElementById('knop-pakket2').style.display = (p === 'persoonlijk') ? 'block' : 'none';
+</script>
+</body>
+</html>

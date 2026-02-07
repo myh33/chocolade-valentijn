@@ -46,8 +46,19 @@
 
 <script>
     const p = new URLSearchParams(window.location.search).get('pakket');
-    document.getElementById('knop-pakket1').style.display = (p === 'standaard') ? 'block' : 'none';
-    document.getElementById('knop-pakket2').style.display = (p === 'persoonlijk') ? 'block' : 'none';
+    
+    // Toon 52,54
+    if (p === 'standaard') {
+        document.getElementById('knop-pakket1').style.display = 'block';
+    } 
+    // Toon 62,54
+    else if (p === 'persoonlijk') {
+        document.getElementById('knop-pakket2').style.display = 'block';
+    } 
+    // Als er niets in de link staat, toon 52,54 zodat de site werkt
+    else {
+        document.getElementById('knop-pakket1').style.display = 'block';
+    }
 </script>
 </body>
 </html>

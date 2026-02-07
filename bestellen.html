@@ -44,21 +44,46 @@
         <a href="index.html" style="color: #5d4037;">← Terug naar de winkel</a>
     </p>
 
-<script>
-    const p = new URLSearchParams(window.location.search).get('pakket');
-    
-    // Toon 52,54
-    if (p === 'standaard') {
-        document.getElementById('knop-pakket1').style.display = 'block';
-    } 
-    // Toon 62,54
-    else if (p === 'persoonlijk') {
-        document.getElementById('knop-pakket2').style.display = 'block';
-    } 
-    // Als er niets in de link staat, toon 52,54 zodat de site werkt
-    else {
-        document.getElementById('knop-pakket1').style.display = 'block';
-    }
-</script>
-</body>
-</html>
+47  <script>
+48      const p = new URLSearchParams(window.location.search).get('pakket');
+49      
+50      // Alles eerst verbergen
+51      document.getElementById('knop-pakket1').style.display = 'none';
+52      document.getElementById('knop-pakket2').style.display = 'none';
+53  
+54      if (p === 'standaard') {
+55          // Toon knop €52,54
+56          document.getElementById('knop-pakket1').style.display = 'block';
+57      } 
+58      else if (p === 'persoonlijk') {
+59          // Toon knop €62,54
+60          document.getElementById('knop-pakket2').style.display = 'block';
+61      } 
+62      else {
+63          // Vangnet: toon €52,54 als er geen keuze is
+64          document.getElementById('knop-pakket1').style.display = 'block';
+65      }
+66  </script>
+67  </body>
+68  </html>47  <script>
+48      const p = new URLSearchParams(window.location.search).get('pakket');
+49      
+50      // Alles eerst verbergen
+51      document.getElementById('knop-pakket1').style.display = 'none';
+52      document.getElementById('knop-pakket2').style.display = 'none';
+53  
+54      if (p === 'standaard') {
+55          // Toon knop €52,54
+56          document.getElementById('knop-pakket1').style.display = 'block';
+57      } 
+58      else if (p === 'persoonlijk') {
+59          // Toon knop €62,54
+60          document.getElementById('knop-pakket2').style.display = 'block';
+61      } 
+62      else {
+63          // Vangnet: toon €52,54 als er geen keuze is
+64          document.getElementById('knop-pakket1').style.display = 'block';
+65      }
+66  </script>
+67  </body>
+68  </html>

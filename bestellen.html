@@ -36,27 +36,34 @@
         Nu betalen via PayPal (€52,54)
     </a>
 
-    <a id="knop-pakket2" href="https://www.paypal.me/cocoacraftco/62,54" target="_blank" class="bestel-knop">
-        Nu betalen via PayPal (€62,54)
-    </a>
+<a id="knop-pakket2" href="https://www.paypal.me/cocoacraftco/62,54" target="_blank" class="bestel-knop">
+    Nu betalen via PayPal (€62,54)
+</a>
 
     <p style="margin-top: 30px; text-align: center;">
         <a href="index.html" style="color: #5d4037;">← Terug naar de winkel</a>
     </p>
 
-   <script>
+<script>
     const urlParams = new URLSearchParams(window.location.search);
     const pakket = urlParams.get('pakket');
 
-    // Als de klant op de eerste pagina op 'standaard' klikte (DIY 39,99):
+    // We zorgen dat er standaard niets getoond wordt voordat we kiezen
+    document.getElementById('knop-pakket1').style.display = 'none';
+    document.getElementById('knop-pakket2').style.display = 'none';
+
     if (pakket === 'standaard') {
-        // Laat de knop van 52,54 zien
+        // Keuze van €39,99 op index -> toon knop €52,54
         document.getElementById('knop-pakket1').style.display = 'block';
     } 
-    // Als de klant op de eerste pagina op 'persoonlijk' klikte (Pakket 49,99):
     else if (pakket === 'persoonlijk') {
-        // Laat de knop van 62,54 zien
+        // Keuze van €49,99 op index -> toon knop €62,54
         document.getElementById('knop-pakket2').style.display = 'block';
+    } 
+    else {
+        // Vangnet: als de link niet herkend wordt, toon de goedkoopste knop (€52,54)
+        // Zo blijft je pagina nooit leeg zoals nu!
+        document.getElementById('knop-pakket1').style.display = 'block';
     }
 </script>
 </body>

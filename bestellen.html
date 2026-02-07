@@ -9,7 +9,6 @@
         label { display: block; margin-top: 10px; font-weight: bold; color: #5d4037; }
         input { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #d7ccc8; border-radius: 8px; box-sizing: border-box; }
         .bestel-knop { background-color: #5d4037; color: white; padding: 15px; text-decoration: none; border-radius: 8px; display: none; margin-top: 20px; text-align: center; width: 100%; font-weight: bold; font-size: 1.1em; }
-        .bestel-knop:hover { background-color: #3e2723; }
         hr { border: 0; border-top: 1px solid #d7ccc8; margin: 30px 0; }
         h1, h3 { color: #5d4037; }
     </style>
@@ -17,34 +16,27 @@
 <body>
 
     <h1>Verzendgegevens</h1>
-    <p>Vul je gegevens in zodat we je pakketje kunnen opsturen.</p>
-
     <form id="verzend-formulier">
         <label for="naam">Naam:</label>
-        <input type="text" id="naam" name="naam" placeholder="Voor- en achternaam" required>
-
+        <input type="text" id="naam" name="naam" required>
         <label for="adres">Adres:</label>
-        <input type="text" id="adres" name="adres" placeholder="Straat en huisnummer" required>
-
+        <input type="text" id="adres" name="adres" required>
         <label for="postcode">Postcode:</label>
-        <input type="text" id="postcode" name="postcode" placeholder="1234 AB" required>
-
+        <input type="text" id="postcode" name="postcode" required>
         <label for="stad">Stad:</label>
-        <input type="text" id="stad" name="stad" placeholder="Woonplaats" required>
-
+        <input type="text" id="stad" name="stad" required>
         <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" placeholder="je@email.nl" required>
+        <input type="email" id="email" name="email" required>
     </form>
 
     <hr>
+    <h3>Totaalbedrag (incl. €12,55 verzending):</h3>
 
-    <h3>Totaalbedrag (incl. €12,55 verzekerde verzending):</h3>
-
-    <a id="knop-persoonlijk" href="https://www.paypal.me/cocoacraftco/52,54" target="_blank" class="bestel-knop">
+    <a id="knop-pakket1" href="https://www.paypal.me/cocoacraftco/52,54" target="_blank" class="bestel-knop">
         Nu betalen via PayPal (€52,54)
     </a>
 
-    <a id="knop-standaard" href="https://www.paypal.me/cocoacraftco/62,54" target="_blank" class="bestel-knop">
+    <a id="knop-pakket2" href="https://www.paypal.me/cocoacraftco/62,54" target="_blank" class="bestel-knop">
         Nu betalen via PayPal (€62,54)
     </a>
 
@@ -53,19 +45,20 @@
     </p>
 
     <script>
-        // Dit script zorgt dat de klant de juiste prijs ziet op basis van hun klik op de vorige pagina
         const urlParams = new URLSearchParams(window.location.search);
         const pakket = urlParams.get('pakket');
 
+        // Check welke prijs getoond moet worden op basis van index.html
         if (pakket === 'persoonlijk') {
-            document.getElementById('knop-persoonlijk').style.display = 'block';
+            // Dit hoort bij de prijs van €39,99 (wordt 52,54)
+            document.getElementById('knop-pakket1').style.display = 'block';
         } else if (pakket === 'standaard') {
-            document.getElementById('knop-standaard').style.display = 'block';
+            // Dit hoort bij de prijs van €49,99 (wordt 62,54)
+            document.getElementById('knop-pakket2').style.display = 'block';
         } else {
-            // Als er geen keuze bekend is, tonen we voor de zekerheid de eerste optie
-            document.getElementById('knop-persoonlijk').style.display = 'block';
+            // Fallback
+            document.getElementById('knop-pakket1').style.display = 'block';
         }
     </script>
-
 </body>
 </html>

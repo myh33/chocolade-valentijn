@@ -44,21 +44,20 @@
         <a href="index.html" style="color: #5d4037;">← Terug naar de winkel</a>
     </p>
 
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const pakket = urlParams.get('pakket');
+   <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const pakket = urlParams.get('pakket');
 
-        // Check welke prijs getoond moet worden op basis van index.html
-        if (pakket === 'persoonlijk') {
-            // Dit hoort bij de prijs van €39,99 (wordt 52,54)
-            document.getElementById('knop-pakket1').style.display = 'block';
-        } else if (pakket === 'standaard') {
-            // Dit hoort bij de prijs van €49,99 (wordt 62,54)
-            document.getElementById('knop-pakket2').style.display = 'block';
-        } else {
-            // Fallback
-            document.getElementById('knop-pakket1').style.display = 'block';
-        }
-    </script>
+    // Als de klant op de eerste pagina op 'standaard' klikte (DIY 39,99):
+    if (pakket === 'standaard') {
+        // Laat de knop van 52,54 zien
+        document.getElementById('knop-pakket1').style.display = 'block';
+    } 
+    // Als de klant op de eerste pagina op 'persoonlijk' klikte (Pakket 49,99):
+    else if (pakket === 'persoonlijk') {
+        // Laat de knop van 62,54 zien
+        document.getElementById('knop-pakket2').style.display = 'block';
+    }
+</script>
 </body>
 </html>
